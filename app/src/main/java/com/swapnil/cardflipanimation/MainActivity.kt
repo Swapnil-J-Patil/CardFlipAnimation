@@ -25,8 +25,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            CardFlipAnimationTheme {
-                val priorities = remember { mutableStateListOf(1f, 0.95f, 0.9f, 0.85f) }
+                /*val priorities = remember { mutableStateListOf(1f, 0.95f, 0.9f, 0.85f) }
                 val colors = remember {
                     mutableStateListOf(
                         Color(0xFFFF9800), // Bright Yellow-Orange
@@ -112,9 +111,8 @@ class MainActivity : ComponentActivity() {
 
                         )
                     }
-                }
+                }*/
 
-            }
         }
     }
 }

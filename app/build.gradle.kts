@@ -1,6 +1,7 @@
 plugins {
-    alias(libs.plugins.android.application)
+    alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("maven-publish")
 }
 
 android {
@@ -8,11 +9,8 @@ android {
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.swapnil.cardflipanimation"
         minSdk = 24
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -45,6 +43,19 @@ android {
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
+    }
+
+}
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                from(components.findByName("release") ?: throw GradleException("Release component not found"))
+                groupId = "com.github.Swapnil-J-Patil"
+                artifactId = "CardFlipAnimation"
+                version = "1.0.0"
+            }
         }
     }
 }
