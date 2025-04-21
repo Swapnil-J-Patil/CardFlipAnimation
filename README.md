@@ -37,7 +37,7 @@ Add the following dependency in your `build.gradle.kts` (Module: app):
 
 ```gradle
 dependencies {
-	        implementation ("com.github.Swapnil-J-Patil:CardFlipAnimation:v1.0.0"
+	implementation ("com.github.Swapnil-J-Patil:CardFlipAnimation:v1.0.0"
 }
 ```
 
